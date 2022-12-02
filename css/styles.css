@@ -1,10 +1,19 @@
 body {
-  padding-top: 3rem;
   font-family: 'Manrope', sans-serif;
   font-size: 13px;
   font-weight: 500;
   min-height: 100vh;
   background-color: hsl(210, 46%, 95%);
+  position: relative;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hide {
@@ -20,6 +29,7 @@ body {
   margin: 0 auto;
   border-radius: 10px;
   background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 .5rem 1rem hsla(0, 0%, 100%, .15);
 }
 
 .div-img-preview {
@@ -27,6 +37,8 @@ body {
   height: 195px;
   position: relative;
   overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #img-preview {
@@ -40,7 +52,7 @@ body {
 }
 
 .div-preview-description {
-  padding: 1.9rem 1.9rem .425rem 1.9rem;
+  padding: 1.9rem 1.9rem 0 1.9rem;
 }
 
 h2 {
@@ -128,4 +140,84 @@ h2, h3 {
 
 .div-share > ul > li > a > svg:hover > path {
   fill: hsl(212, 23%, 69%);
+}
+
+@media (min-width: 576px) {
+  .div-preview {
+    width: 55%;
+  }
+}
+
+@media (min-width: 767px) {
+  .div-preview {
+    width: 41%;
+  }
+}
+
+@media (min-width: 922px) {
+  .div-preview {
+    width: 60%;
+    height: 195px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .div-img-preview {
+    width: 30%;
+    height: 100%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+  }
+
+  #img-preview {
+    height: 100%;
+    top: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+  }
+
+  .div-preview-description {
+    width: 70%;
+    height: 65%;
+    padding: 1rem;
+  }
+
+  .div-footer {
+    width: 70%;
+    height: 35%;
+    padding: 1rem;
+  }
+
+  .div-pfp {
+    padding: 0;
+  }
+
+  .div-share {
+    width: 213px;
+    height: auto;
+    padding: .75rem 1.5rem;
+    left: initial;
+    right: -64.5px;
+    top: -3rem;
+    border-radius: 10px;
+  }
+
+  .div-share::after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid hsl(217, 19%, 35%);
+  }
+
+  #btn-share {
+    font-size: 12px;
+  }
 }
